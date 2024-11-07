@@ -90,8 +90,4 @@ for i in range(10):
 plt.show()
 ```
 
-This project is licensed under the [MIT License](LICENSE).
-
----
-
 Feel free to modify sections of this README to suit your project’s specifics!
