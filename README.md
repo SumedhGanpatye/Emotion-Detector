@@ -14,7 +14,7 @@ The FER-2013 dataset contains 35,887 grayscale, 48x48 pixel face images with eac
 
 The dataset can be downloaded from Kaggle: [FER-2013 dataset on Kaggle](https://www.kaggle.com/datasets/msambare/fer2013).
 
-![Dataset Overview](images/Dataset.png)
+![Dataset Overview](Images/Dataset.png)
 
 ## Project Structure
 - `train/`: Training images, organized by emotion labels.
@@ -41,7 +41,7 @@ The model uses a deep CNN with several convolutional, pooling, dropout, and dens
 5. **Dense Layers**: Final fully connected layers to classify emotions.
 
 ### Summary of the model:
-![Model Architecture](images/Architecture.png)
+![Model Architecture](./Images/Architecture.png)
 
 ## Training the Model
 1. **Data Augmentation**: Images are rescaled by a factor of 1/255 for normalization.
@@ -62,7 +62,7 @@ model.fit(
 ## Results
 The model achieves approximately 50-60% validation accuracy after training on the FER-2013 dataset. Performance can vary based on hyperparameter tuning and training duration.
 
-![Accuracy and Loss](images/Accuracy%20and%20loss.png)
+![Accuracy and Loss](Images/Accuracy%20and%20loss.png)
 
 ## Usage
 To train the model:
