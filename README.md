@@ -89,5 +89,3 @@ for i in range(10):
     axes[i].axis('off')
 plt.show()
 ```
-
-Feel free to modify sections of this README to suit your project’s specifics!
