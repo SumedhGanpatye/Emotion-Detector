@@ -14,6 +14,8 @@ The FER-2013 dataset contains 35,887 grayscale, 48x48 pixel face images with eac
 
 The dataset can be downloaded from Kaggle: [FER-2013 dataset on Kaggle](https://www.kaggle.com/datasets/msambare/fer2013).
 
+![Dataset Overview](images/Dataset.png)
+
 ## Project Structure
 - `train/`: Training images, organized by emotion labels.
 - `test/`: Test/Validation images, organized by emotion labels.
@@ -39,16 +41,7 @@ The model uses a deep CNN with several convolutional, pooling, dropout, and dens
 5. **Dense Layers**: Final fully connected layers to classify emotions.
 
 ### Summary of the model:
-```plaintext
-Layer (type)                  Output Shape              Param #   
-=================================================================
-Conv2D-32, BatchNorm, ReLU, MaxPool, Dropout
-Conv2D-64, BatchNorm, ReLU, MaxPool, Dropout
-Flatten
-Dense-1024 (ReLU)
-Dropout
-Output Layer (7 classes with softmax activation)
-```
+![Model Architecture](images/Architecture.png)
 
 ## Training the Model
 1. **Data Augmentation**: Images are rescaled by a factor of 1/255 for normalization.
@@ -69,6 +62,8 @@ model.fit(
 ## Results
 The model achieves approximately 50-60% validation accuracy after training on the FER-2013 dataset. Performance can vary based on hyperparameter tuning and training duration.
 
+![Accuracy and Loss](images/Accuracy%20and%20loss.png)
+
 ## Usage
 To train the model:
 1. Set up Kaggle API credentials (`kaggle.json`) in the notebook.
@@ -78,14 +73,4 @@ To test the model:
 1. Generate sample predictions on the validation set and visualize them.
 2. Use `validation_generator` to feed test images and display predictions.
 
-## Sample Predictions
-This section displays a grid of sample images from the test set with their predicted emotion labels.
 
-```python
-fig, axes = plt.subplots(1, 10, figsize=(20, 4))
-for i in range(10):
-    axes[i].imshow(np.squeeze(x_test[i]), cmap='gray')
-    axes[i].set_title(f"Label: {np.argmax(y_test[i])}")
-    axes[i].axis('off')
-plt.show()
-```
